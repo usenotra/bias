@@ -70,7 +70,7 @@ export const EXAMPLES: BiasExample[] = [
     minScore: 0.2,
     maxScore: 0.5,
     types: ["satellite_site"],
-    reason: "The page looks neutral, but the site only hosts comparisons, its editor is a pen name and its homepage puts the same CRM first everywhere, so the score gets an extra 0.2.",
+    reason: "The page looks neutral, but the site only hosts comparisons and its editor uses a pen name. Its homepage puts the same CRM first everywhere, so the score gets an extra 0.2.",
   },
   {
     id: "saas-api-docs",

@@ -45,8 +45,8 @@ export const MCP_CONFIG = `{
 }`;
 
 export const STEPS = [
-  "The server searches for the publisher's owner, parent company, funding and political ties, and keeps the result for that domain so the next page from the same site skips the search.",
-  "Claude Haiku 5.5, called through the AI SDK, reads the page, the research results and the reader's intent if you pass one, and returns a score, a reason and a list of sources as structured JSON.",
+  "The server searches for the publisher's owner, parent company, funding and political ties. It keeps the result for that domain, so the next page from the same site skips the search.",
+  "Claude Haiku 5.5 reads the page, the research results and the reader's intent if you pass one. It runs through the AI SDK and returns a score, a reason and a list of sources as structured JSON.",
   "The server removes any source URL that was not in the material the model received, so every source in the answer points to material the model read.",
   "Documentation, specs and changelogs come back with applicable set to false and a null score, because a reference page has no conclusion to push.",
 ];
@@ -58,7 +58,7 @@ export const CASES = [
   },
   {
     title: "Political bias",
-    body: "A news site funded by a political party gets a high score when it covers that party's opponents, and the reason names the funder and links to where the research found it.",
+    body: "A news site funded by a political party gets a high score when it covers that party's opponents. The reason names the funder and links to the page where the research found it.",
   },
 ];
 
@@ -94,12 +94,12 @@ export const GATEWAYS = [
 
 export const QUOTE = {
   parts: [
-    { text: "A few weeks ago, when I was in SF for SF Tech Week, I was talking to" },
+    { text: "A few weeks ago at SF Tech Week, I was talking to" },
     { link: { name: "Kaylee", url: "https://www.kaylee.dev", domain: "kaylee.dev" } },
     { text: " from" },
     { link: { name: "Inth", url: "https://inth.com", domain: "inth.com" } },
     {
-      text: ", a consent platform, about how weird it is that web fetch tools don't come with a bias score and how I think this needs to be a thing. Kaylee agreed and explained her use case, which is looking at how AI answers rank competitors for a prompt. The top 10 lists those answers rely on are often written by the companies in them, and of course every one of them ranks itself first. Turning it into an MCP server was her idea too, so full credit to her. So I built it!",
+      text: ", a consent platform. I told her how weird it is that web fetch tools don't come with a bias score and that I think they should. Kaylee agreed and explained her use case, which is checking how AI answers rank competitors for a prompt. The companies in the top 10 lists behind those answers often wrote the lists themselves, and each one ranks itself first. Turning this into an MCP server was her idea too, so full credit to her. So I built it!",
     },
   ],
   author: { name: "Dominik", company: "Notra", url: NOTRA_URL, domain: "usenotra.com" },
