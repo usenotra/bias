@@ -99,7 +99,7 @@ export const QUOTE = {
     { text: " from" },
     { link: { name: "Inth", url: "https://inth.com", domain: "inth.com" } },
     {
-      text: ", a consent platform, about how weird it is that web fetch tools don't come with a bias score and how I think this needs to be a thing. Kaylee agreed and explained her use case, which is looking at how AI answers rank competitors for a prompt. The top 10 lists those answers rely on are often written by the companies in them, and of course every one of them ranks itself first. Turning it into an MCP server was her idea too, so full credit to her. So here it is!",
+      text: ", a consent platform, about how weird it is that web fetch tools don't come with a bias score and how I think this needs to be a thing. Kaylee agreed and explained her use case, which is looking at how AI answers rank competitors for a prompt. The top 10 lists those answers rely on are often written by the companies in them, and of course every one of them ranks itself first. Turning it into an MCP server was her idea too, so full credit to her. So I built it!",
     },
   ],
   author: { name: "Dominik", company: "Notra", url: NOTRA_URL, domain: "usenotra.com" },
