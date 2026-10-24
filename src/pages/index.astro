@@ -9,6 +9,7 @@ import {
   BIAS_EXAMPLE,
   CASES,
   EVALS_URL,
+  GATEWAYS,
   INSTALL_COMMAND,
   MCP_CONFIG,
   NOTRA_URL,
@@ -154,13 +155,37 @@ import {
     <section id="install" class="mx-auto max-w-3xl scroll-mt-8 px-6 py-24">
       <h2 class="text-3xl font-semibold tracking-[-0.02em]">Add it to your agent</h2>
       <p class="text-muted-foreground mt-4 text-pretty">
-        Build the server, then add it to Claude Code, Claude Desktop or Cursor. You need a key for at least one
-        provider, and an Anthropic key turns on scoring.
+        Build the server, then add it to Claude Code, Claude Desktop or Cursor. You need one search provider key and
+        one model gateway for scoring.
       </p>
       <div class="mt-8 space-y-4 text-[0.8125rem] [&_pre]:overflow-x-auto [&_pre]:rounded-2xl [&_pre]:border [&_pre]:p-5">
         <Code code={INSTALL_COMMAND} lang="bash" theme="github-light" />
         <Code code={MCP_CONFIG} lang="json" theme="github-light" />
       </div>
+      <h3 class="mt-14 text-xl font-semibold tracking-[-0.01em]">Pick a model gateway</h3>
+      <p class="text-muted-foreground mt-3 text-pretty">
+        Scoring runs through the <a href="https://ai-sdk.dev" target="_blank" rel="noopener" class="text-foreground underline underline-offset-4">AI SDK</a>.
+        Bias checks for these keys in order and uses the first gateway that is fully set. Every gateway defaults to
+        Claude Haiku 5.5, and <code class="text-foreground">BIAS_MODEL</code> switches to another model.
+      </p>
+      <ol class="mt-6 space-y-3">
+        {
+          GATEWAYS.map((gateway, index) => (
+            <li class="bg-muted/60 flex gap-4 rounded-2xl border p-5">
+              <span class="text-muted-foreground w-4 shrink-0 pt-0.5 text-sm tabular-nums">{index + 1}</span>
+              <div class="min-w-0">
+                <ProviderLink name={gateway.name} url={gateway.url} domain={gateway.domain} />
+                <div class="mt-2 flex flex-wrap gap-1.5">
+                  {gateway.env.map((name) => (
+                    <code class="bg-background rounded-md border px-2 py-0.5 text-xs">{name}</code>
+                  ))}
+                </div>
+                <p class="text-muted-foreground mt-2 text-sm text-pretty">{gateway.note}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
     </section>
   </main>
 

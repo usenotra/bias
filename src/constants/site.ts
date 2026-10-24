@@ -36,10 +36,9 @@ export const MCP_CONFIG = `{
       "command": "node",
       "args": ["/path/to/bias-mcp/dist/index.js"],
       "env": {
-        "EXA_API_KEY": "...",
         "FIRECRAWL_API_KEY": "...",
-        "CONTEXT_DEV_API_KEY": "...",
-        "ANTHROPIC_API_KEY": "..."
+        "NEON_AI_GATEWAY_BASE_URL": "...",
+        "NEON_AI_GATEWAY_TOKEN": "..."
       }
     }
   }
@@ -47,7 +46,7 @@ export const MCP_CONFIG = `{
 
 export const STEPS = [
   "The server searches for the publisher's owner, parent company, funding and political ties, and keeps the result for that domain so the next page from the same site skips the search.",
-  "Claude Haiku 5.5 reads the page, the research results and the reader's intent if you pass one, and returns a score, a reason and a list of sources as structured JSON.",
+  "Claude Haiku 5.5, called through the AI SDK, reads the page, the research results and the reader's intent if you pass one, and returns a score, a reason and a list of sources as structured JSON.",
   "The server removes any source URL that was not in the material the model received, so every source in the answer points to something the model actually read.",
   "Documentation, specs and changelogs come back with applicable set to false and a null score, because a reference page has no conclusion to push.",
 ];
@@ -67,4 +66,28 @@ export const PROVIDERS = [
   { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", className: "h-5.5" },
   { name: "Firecrawl", url: "https://www.firecrawl.dev", logo: "/logos/firecrawl.svg", className: "h-6" },
   { name: "context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", className: "h-8" },
+];
+
+export const GATEWAYS = [
+  {
+    name: "Neon AI Gateway",
+    url: "https://neon.com/docs/ai-gateway",
+    domain: "neon.com",
+    env: ["NEON_AI_GATEWAY_BASE_URL", "NEON_AI_GATEWAY_TOKEN"],
+    note: "Both values come from the AI Gateway tab of a Neon branch, or from neon env pull.",
+  },
+  {
+    name: "OpenRouter",
+    url: "https://openrouter.ai",
+    domain: "openrouter.ai",
+    env: ["OPENROUTER_API_KEY"],
+    note: "Used when the Neon values are not both set.",
+  },
+  {
+    name: "Vercel AI Gateway",
+    url: "https://vercel.com/ai-gateway",
+    domain: "vercel.com",
+    env: ["AI_GATEWAY_API_KEY"],
+    note: "Used when neither of the above is set.",
+  },
 ];
