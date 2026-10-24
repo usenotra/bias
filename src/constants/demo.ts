@@ -16,7 +16,7 @@ export const DEMO_TOOL_CALLS: ClaudeCodeSessionToolCall[] = [
     id: "search",
     tool: "bias - web_search (MCP)",
     arg: 'query: "best CRM for startups"',
-    result: "10 results from exa, firecrawl and context",
+    result: "10 results from firecrawl",
   },
   {
     id: "fetch-list",

@@ -3,6 +3,7 @@ import { Code } from "astro:components";
 import BiasDemo from "@/components/bias-demo";
 import BiasExamples from "@/components/bias-examples";
 import HeroActions from "@/components/hero-actions";
+import ProviderLink from "@/components/provider-link.astro";
 import Layout from "@/layouts/Layout.astro";
 import {
   BIAS_EXAMPLE,
@@ -136,14 +137,16 @@ import {
       <div class="mx-auto max-w-3xl px-6 py-24">
         <h2 class="text-3xl font-semibold tracking-[-0.02em]">One interface over three providers</h2>
         <p class="text-muted-foreground mt-4 text-pretty">
-          <code class="text-foreground">web_search</code> sends your query to every provider you have a key for at the
-          same time and merges the lists with reciprocal rank fusion. A URL that two providers return ranks above a URL
-          that only one returns, and each result lists the providers that found it. If one provider fails, the others
-          still answer and the failure shows up in the response.
+          Bias uses one provider at a time, picked from the keys you have set. It tries
+          <ProviderLink name="Firecrawl" url="https://www.firecrawl.dev" domain="firecrawl.dev" /> first, then
+          <ProviderLink name="context.dev" url="https://www.context.dev" domain="context.dev" />, then
+          <ProviderLink name="Exa" url="https://exa.ai" domain="exa.ai" />, and only moves to the next one when a call
+          fails, so a single key is all you need.
         </p>
         <p class="text-muted-foreground mt-4 text-pretty">
-          <code class="text-foreground">web_fetch</code> tries <a href="https://www.firecrawl.dev" target="_blank" rel="noopener" class="text-foreground underline underline-offset-4">Firecrawl</a> first, then <a href="https://www.context.dev" target="_blank" rel="noopener" class="text-foreground underline underline-offset-4">context.dev</a>, then <a href="https://exa.ai" target="_blank" rel="noopener" class="text-foreground underline underline-offset-4">Exa</a>, and returns
-          the first page that comes back as clean markdown. You can also name a single provider.
+          Both tools return clean markdown and the same result shape whichever provider answered. You can name a
+          provider on any call, or pass several to <code class="text-foreground">web_search</code> to merge their
+          results.
         </p>
       </div>
     </section>
