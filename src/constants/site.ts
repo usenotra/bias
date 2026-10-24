@@ -47,7 +47,7 @@ export const MCP_CONFIG = `{
 export const STEPS = [
   "The server searches for the publisher's owner, parent company, funding and political ties, and keeps the result for that domain so the next page from the same site skips the search.",
   "Claude Haiku 5.5, called through the AI SDK, reads the page, the research results and the reader's intent if you pass one, and returns a score, a reason and a list of sources as structured JSON.",
-  "The server removes any source URL that was not in the material the model received, so every source in the answer points to something the model actually read.",
+  "The server removes any source URL that was not in the material the model received, so every source in the answer points to material the model read.",
   "Documentation, specs and changelogs come back with applicable set to false and a null score, because a reference page has no conclusion to push.",
 ];
 
@@ -81,13 +81,13 @@ export const GATEWAYS = [
     url: "https://openrouter.ai",
     domain: "openrouter.ai",
     env: ["OPENROUTER_API_KEY"],
-    note: "Used when the Neon values are not both set.",
+    note: "Bias uses OpenRouter when the two Neon values are not both set.",
   },
   {
     name: "Vercel AI Gateway",
     url: "https://vercel.com/ai-gateway",
     domain: "vercel.com",
     env: ["AI_GATEWAY_API_KEY"],
-    note: "Used when neither of the above is set.",
+    note: "Bias uses Vercel AI Gateway when neither Neon nor OpenRouter is set.",
   },
 ];

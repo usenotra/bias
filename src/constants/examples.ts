@@ -92,7 +92,7 @@ export const EXAMPLES: BiasExample[] = [
     minScore: 0.75,
     maxScore: 1,
     types: ["political", "funding"],
-    reason: "The outlet is funded by the Liberty Forward Party's media fund and is attacking a senator from the rival party.",
+    reason: "The Liberty Forward Party's media fund pays for the outlet, and the article attacks a senator from the rival party.",
   },
   {
     id: "political-industry-funded-think-tank",
