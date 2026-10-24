@@ -1,0 +1,144 @@
+---
+import { Code } from "astro:components";
+import BiasDemo from "@/components/bias-demo";
+import HeroActions from "@/components/hero-actions";
+import Layout from "@/layouts/Layout.astro";
+import {
+  BIAS_EXAMPLE,
+  CASES,
+  INSTALL_COMMAND,
+  MCP_CONFIG,
+  NOTRA_URL,
+  REPO_URL,
+  SITE_DESCRIPTION,
+  SITE_REPO_URL,
+  SITE_TITLE,
+  STEPS,
+} from "@/constants/site";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <header class="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
+    <a href="/" class="flex items-center gap-2.5 font-semibold tracking-tight">
+      <img src="/favicon.svg" alt="" class="size-7" />
+      Bias
+      <span class="text-muted-foreground font-normal">by Notra</span>
+    </a>
+    <nav class="text-muted-foreground flex items-center gap-6 text-sm">
+      <a href="#how" class="hover:text-foreground">How it works</a>
+      <a href="#install" class="hover:text-foreground">Install</a>
+      <a href={REPO_URL} class="hover:text-foreground">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="mx-auto max-w-3xl px-6 pt-16 pb-14 text-center sm:pt-24">
+      <p class="text-muted-foreground mb-5 text-sm font-medium">An open source MCP server by Notra</p>
+      <h1 class="text-4xl font-semibold tracking-[-0.03em] text-balance sm:text-6xl">
+        Web search that tells your agent who is behind every page
+      </h1>
+      <p class="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg text-pretty">
+        Bias gives your agent one search tool and one fetch tool on top of Exa, Firecrawl and context.dev.
+        Every page it fetches comes back with a bias score from 0 to 1, a reason and the sources behind
+        that reason, so a vendor's list of the best tools that ranks the vendor first no longer reads like an
+        independent review.
+      </p>
+      <HeroActions />
+    </section>
+
+    <section class="mx-auto max-w-4xl px-6 pb-24">
+      <BiasDemo client:visible />
+    </section>
+
+    <section class="bg-muted/60 border-y">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 py-24 lg:grid-cols-2 lg:items-start">
+        <div>
+          <h2 class="text-3xl font-semibold tracking-[-0.02em]">What a fetch returns</h2>
+          <p class="text-muted-foreground mt-4 text-pretty">
+            Scoring is on by default, so <code class="text-foreground">web_fetch</code> adds a <code class="text-foreground">bias</code> object next to the page markdown. The score runs from 0 for an independent source to 1 for a publisher
+            with a direct stake in the conclusion it pushes. The reason names the publisher and the stake, and each
+            entry in <code class="text-foreground">sources</code> points to the page or to a search result about the publisher.
+          </p>
+          <p class="text-muted-foreground mt-4 text-pretty">
+            Pass <code class="text-foreground">bias: false</code> to skip the model call when you only need the content.
+          </p>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2">
+            {
+              CASES.map((item) => (
+                <div class="bg-background rounded-2xl border p-5 shadow-xs">
+                  <h3 class="font-medium">{item.title}</h3>
+                  <p class="text-muted-foreground mt-2 text-sm text-pretty">{item.body}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="min-w-0 overflow-hidden rounded-2xl border bg-white text-[0.8125rem] shadow-xs [&_pre]:overflow-x-auto [&_pre]:p-5">
+          <Code code={BIAS_EXAMPLE} lang="json" theme="github-light" wrap />
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="mx-auto max-w-5xl scroll-mt-8 px-6 py-24">
+      <div class="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div>
+          <h2 class="text-3xl font-semibold tracking-[-0.02em]">How the score is made</h2>
+          <p class="text-muted-foreground mt-4 text-pretty">
+            A cheap model does the reading, and the server checks its work before your agent sees it. Scoring a
+            30,000 token article costs about $0.003.
+          </p>
+        </div>
+        <ol class="space-y-6">
+          {
+            STEPS.map((step, index) => (
+              <li class="flex gap-4">
+                <span class="marketing-gradient-flat flex size-7 shrink-0 items-center justify-center rounded-full text-sm font-medium text-white">
+                  {index + 1}
+                </span>
+                <p class="pt-0.5 text-pretty">{step}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-muted/60 border-y">
+      <div class="mx-auto max-w-3xl px-6 py-24">
+        <h2 class="text-3xl font-semibold tracking-[-0.02em]">One interface over three providers</h2>
+        <p class="text-muted-foreground mt-4 text-pretty">
+          <code class="text-foreground">web_search</code> sends your query to every provider you have a key for at the
+          same time and merges the lists with reciprocal rank fusion. A URL that two providers return ranks above a URL
+          that only one returns, and each result lists the providers that found it. If one provider fails, the others
+          still answer and the failure shows up in the response.
+        </p>
+        <p class="text-muted-foreground mt-4 text-pretty">
+          <code class="text-foreground">web_fetch</code> tries Firecrawl first, then context.dev, then Exa, and returns
+          the first page that comes back as clean markdown. You can also name a single provider.
+        </p>
+      </div>
+    </section>
+
+    <section id="install" class="mx-auto max-w-3xl scroll-mt-8 px-6 py-24">
+      <h2 class="text-3xl font-semibold tracking-[-0.02em]">Add it to your agent</h2>
+      <p class="text-muted-foreground mt-4 text-pretty">
+        Build the server, then add it to Claude Code, Claude Desktop or Cursor. You need a key for at least one
+        provider, and an Anthropic key turns on scoring.
+      </p>
+      <div class="mt-8 space-y-4 text-[0.8125rem] [&_pre]:overflow-x-auto [&_pre]:rounded-2xl [&_pre]:border [&_pre]:p-5">
+        <Code code={INSTALL_COMMAND} lang="bash" theme="github-light" />
+        <Code code={MCP_CONFIG} lang="json" theme="github-light" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t">
+    <div class="text-muted-foreground mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm">
+      <p>Bias is MIT licensed and built by <a href={NOTRA_URL} class="text-foreground hover:underline">Notra</a>.</p>
+      <div class="flex gap-6">
+        <a href={REPO_URL} class="hover:text-foreground">Server source</a>
+        <a href={SITE_REPO_URL} class="hover:text-foreground">Site source</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
