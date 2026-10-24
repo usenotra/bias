@@ -5,7 +5,7 @@ export const NOTRA_URL = "https://www.usenotra.com";
 
 export const SITE_TITLE = "Bias, web search that tells your agent who is behind every page";
 export const SITE_DESCRIPTION =
-  "An MCP server for web search and fetch on top of Exa, Firecrawl and context.dev that scores every page it reads for commercial and political bias.";
+  "An MCP server for web search and fetch on top of Exa, Firecrawl and Context.dev that scores every page it reads for commercial and political bias.";
 
 export const BIAS_EXAMPLE = `"bias": {
   "applicable": true,
@@ -65,7 +65,7 @@ export const CASES = [
 export const PROVIDERS = [
   { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", className: "h-5.5" },
   { name: "Firecrawl", url: "https://www.firecrawl.dev", logo: "/logos/firecrawl.svg", className: "h-6" },
-  { name: "context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", className: "h-8" },
+  { name: "Context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", className: "h-8" },
 ];
 
 export const GATEWAYS = [
