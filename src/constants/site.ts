@@ -96,6 +96,6 @@ export const QUOTE = {
   before: "A few weeks ago, when I was in SF for SF Tech Week, I was talking to",
   mention: { name: "Kaylee from Inth", url: "https://inth.com", domain: "inth.com" },
   after:
-    ", a consent platform, about how weird it is that web fetch tools don't come with a bias score and how I think this needs to be a thing. Kaylee agreed, and we chatted about building something like this. So here it is!",
+    ", a consent platform, about how weird it is that web fetch tools don't come with a bias score and how I think this needs to be a thing. I explained my use case, which is looking at how AI answers rank competitors for a prompt. The top 10 lists those answers rely on are often written by the companies in them, and of course every one of them ranks itself first. Kaylee agreed, and turning it into an MCP server was her idea, so full credit to her. So here it is!",
   author: { name: "Dominik", company: "Notra", url: NOTRA_URL, domain: "usenotra.com" },
 };
