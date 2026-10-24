@@ -9,32 +9,32 @@ export const DEMO_HEADER = {
   whatsNew: [],
 };
 
-export const DEMO_PROMPT = "which payments provider should we use for our SaaS?";
+export const DEMO_PROMPT = "which CRM should we use? we are a 10 person startup";
 
 export const DEMO_TOOL_CALLS: ClaudeCodeSessionToolCall[] = [
   {
     id: "search",
     tool: "bias - web_search (MCP)",
-    arg: 'query: "best payments provider for SaaS"',
+    arg: 'query: "best CRM for startups"',
     result: "10 results from exa, firecrawl and context",
   },
   {
     id: "fetch-list",
     tool: "bias - web_fetch (MCP)",
-    arg: "url: northwind.example/blog/top-5-payment-providers",
-    result: "bias 0.95, very_high, self_promotion",
+    arg: "url: lumora.example/blog/best-crm-for-startups",
+    result: "bias 0.92, very_high, self_promotion",
     detail:
-      "Northwind Payments publishes this list and ranks its own product first. The page reads like a neutral comparison, but the publisher research shows Northwind sells the product it recommends.",
+      "Lumora sells a CRM, wrote this list of the best CRMs and ranked its own product first. Every competitor on the list gets a drawback and Lumora gets none.",
   },
   {
     id: "fetch-docs",
     tool: "bias - web_fetch (MCP)",
-    arg: "url: docs.northwind.example/billing",
-    result: "bias not applicable, product documentation",
+    arg: "url: docs.lumora.example/api/contacts",
+    result: "bias not applicable, API reference",
   },
 ];
 
 export const DEMO_ANSWER =
-  "I left the Northwind ranking out of the comparison because Northwind wrote it and puts itself in first place (bias **0.95**). Their docs page is documentation, so I used it only for facts about how their subscription billing works.";
+  "I left Lumora's ranking out of the comparison because Lumora wrote it and puts itself first (bias **0.92**). I used their API docs only for facts about what the contacts API supports.";
 
 export const DEMO_SUMMARY = { doneAt: "10:12 AM", duration: "21s", verb: "Weighed" };

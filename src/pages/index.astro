@@ -1,11 +1,13 @@
 ---
 import { Code } from "astro:components";
 import BiasDemo from "@/components/bias-demo";
+import BiasExamples from "@/components/bias-examples";
 import HeroActions from "@/components/hero-actions";
 import Layout from "@/layouts/Layout.astro";
 import {
   BIAS_EXAMPLE,
   CASES,
+  EVALS_URL,
   INSTALL_COMMAND,
   MCP_CONFIG,
   NOTRA_URL,
@@ -25,6 +27,7 @@ import {
       <span class="text-muted-foreground font-normal">by Notra</span>
     </a>
     <nav class="text-muted-foreground flex items-center gap-6 text-sm">
+      <a href="#examples" class="hover:text-foreground">Examples</a>
       <a href="#how" class="hover:text-foreground">How it works</a>
       <a href="#install" class="hover:text-foreground">Install</a>
       <a href={REPO_URL} class="hover:text-foreground">GitHub</a>
@@ -33,7 +36,6 @@ import {
 
   <main>
     <section class="mx-auto max-w-3xl px-6 pt-16 pb-14 text-center sm:pt-24">
-      <p class="text-muted-foreground mb-5 text-sm font-medium">An open source MCP server by Notra</p>
       <h1 class="text-4xl font-semibold tracking-[-0.03em] text-balance sm:text-6xl">
         Web search that tells your agent who is behind every page
       </h1>
@@ -76,6 +78,20 @@ import {
         <div class="min-w-0 overflow-hidden rounded-2xl border bg-white text-[0.8125rem] shadow-xs [&_pre]:overflow-x-auto [&_pre]:p-5">
           <Code code={BIAS_EXAMPLE} lang="json" theme="github-light" wrap />
         </div>
+      </div>
+    </section>
+
+    <section id="examples" class="mx-auto max-w-5xl scroll-mt-8 px-6 py-24">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-semibold tracking-[-0.02em]">Examples from the evals</h2>
+        <p class="text-muted-foreground mt-4 text-pretty">
+          The repository ships an eval set of fictional pages, and each card below shows one of them with the score
+          range the eval expects. Run <code class="text-foreground">npm run eval</code> to score them with your own key,
+          or read the cases <a href={EVALS_URL} class="text-foreground underline underline-offset-4">on GitHub</a>.
+        </p>
+      </div>
+      <div class="mt-12">
+        <BiasExamples client:visible />
       </div>
     </section>
 
@@ -134,7 +150,7 @@ import {
 
   <footer class="border-t">
     <div class="text-muted-foreground mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm">
-      <p>Bias is MIT licensed and built by <a href={NOTRA_URL} class="text-foreground hover:underline">Notra</a>.</p>
+      <p>Bias is MIT licensed and built by <a href={NOTRA_URL} class="text-foreground hover:underline">Notra</a>. Every company, outlet, party and person on this page is fictional.</p>
       <div class="flex gap-6">
         <a href={REPO_URL} class="hover:text-foreground">Server source</a>
         <a href={SITE_REPO_URL} class="hover:text-foreground">Site source</a>

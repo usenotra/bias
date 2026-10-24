@@ -1,4 +1,5 @@
 export const REPO_URL = "https://github.com/usenotra/web-mcp";
+export const EVALS_URL = "https://github.com/usenotra/web-mcp/tree/main/evals";
 export const SITE_REPO_URL = "https://github.com/usenotra/bias";
 export const NOTRA_URL = "https://usenotra.com";
 
@@ -8,20 +9,20 @@ export const SITE_DESCRIPTION =
 
 export const BIAS_EXAMPLE = `"bias": {
   "applicable": true,
-  "score": 0.95,
+  "score": 0.92,
   "level": "very_high",
-  "types": ["self_promotion"],
-  "publisher": "Northwind Payments",
-  "favors": ["Northwind Payments"],
-  "reason": "Northwind sells a payments product and publishes this ranking of payment providers, which puts Northwind first.",
+  "types": ["self_promotion", "competitor_disparagement"],
+  "publisher": "Lumora",
+  "favors": ["Lumora CRM"],
+  "reason": "Lumora sells a CRM and published this ranking of CRMs, which puts Lumora first and lists a drawback for every competitor.",
   "sources": [
     {
-      "url": "https://northwind.example/blog/top-5-payment-providers",
-      "evidence": "\\"1. Northwind, the best choice for growing teams\\""
+      "url": "https://lumora.example/blog/best-crm-for-startups",
+      "evidence": "For almost every startup, Lumora CRM is the clear winner."
     },
     {
-      "url": "https://northwind.example/about",
-      "evidence": "Northwind builds payment processing software for online businesses"
+      "url": "https://lumora.example/about",
+      "evidence": "Lumora builds Lumora CRM, a customer relationship management platform for small teams."
     }
   ]
 }`;
@@ -54,7 +55,7 @@ export const STEPS = [
 export const CASES = [
   {
     title: "Commercial bias",
-    body: "A payments company that publishes a list of the five best payment providers and ranks itself first gets a score close to 1, with the ranking quoted as evidence.",
+    body: "A software vendor that publishes a list of the best tools in its own category and ranks itself first gets a score close to 1, with the ranking quoted as evidence.",
   },
   {
     title: "Political bias",
