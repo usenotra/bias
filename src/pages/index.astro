@@ -5,7 +5,6 @@ import BiasExamples from "@/components/bias-examples";
 import HeroActions from "@/components/hero-actions";
 import ProviderLink from "@/components/provider-link.astro";
 import Layout from "@/layouts/Layout.astro";
-import { faviconUrl } from "@/utils/favicon";
 import {
   BIAS_EXAMPLE,
   CASES,
@@ -74,10 +73,14 @@ import {
         <blockquote class="text-lg text-pretty">
           "{QUOTE.parts.map((part) => (part.link ? <ProviderLink name={part.link.name} url={part.link.url} domain={part.link.domain} /> : part.text))}"
         </blockquote>
-        <figcaption class="text-muted-foreground mt-5 flex items-center gap-2.5 text-sm">
-          <img src={faviconUrl(QUOTE.author.domain)} alt="" width="20" height="20" class="size-5" loading="lazy" />
-          <span class="text-foreground font-medium">{QUOTE.author.name}</span>
-          <a href={QUOTE.author.url} class="hover:text-foreground">{QUOTE.author.company}</a>
+        <figcaption class="text-muted-foreground mt-6 flex items-center gap-3 text-sm">
+          <img src={QUOTE.author.avatar} alt={QUOTE.author.name} width="36" height="36" class="size-9 rounded-full" loading="lazy" />
+          <span class="flex flex-col">
+            <span class="text-foreground font-medium">{QUOTE.author.name}</span>
+            <span>
+              {QUOTE.author.role} <a href={QUOTE.author.url} target="_blank" rel="noopener" class="text-foreground underline underline-offset-4">{QUOTE.author.company}</a>
+            </span>
+          </span>
         </figcaption>
       </figure>
     </section>

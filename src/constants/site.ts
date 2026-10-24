@@ -102,5 +102,5 @@ export const QUOTE = {
       text: ", a consent platform. I told her how weird it is that web fetch tools don't come with a bias score and that I think they should. Kaylee agreed and explained her use case, which is checking how AI answers rank competitors for a prompt. The companies in the top 10 lists behind those answers often wrote the lists themselves, and each one ranks itself first. Turning this into an MCP server was her idea too, so full credit to her. So I built it!",
     },
   ],
-  author: { name: "Dominik", company: "Notra", url: NOTRA_URL, domain: "usenotra.com" },
+  author: { name: "Dominik Koch", role: "CEO", company: "@Notra", url: NOTRA_URL, avatar: "/dominik.jpg" },
 };
