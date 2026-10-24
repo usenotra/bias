@@ -5,14 +5,14 @@ This repository holds the landing page for Bias, the MCP server that runs web se
 ## Develop
 
 ```bash
-bun install
-bun run dev
+pnpm install
+pnpm dev
 ```
 
 ## Deploy
 
 ```bash
-bun run deploy
+pnpm run deploy
 ```
 
 The deploy script builds the site and runs `wrangler deploy`, which uploads `dist` as static assets and binds the Worker to the `bias.usenotra.com` custom domain.
