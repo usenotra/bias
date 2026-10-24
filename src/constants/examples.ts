@@ -62,6 +62,17 @@ export const EXAMPLES: BiasExample[] = [
     reason: "A publicly funded lab with no vendor ties published its method, its scripts and a result with no single winner.",
   },
   {
+    id: "satellite-page-without-the-company",
+    category: "saas",
+    domain: "startupcrmreviews.example",
+    title: "PipeLantern alternatives",
+    applicable: true,
+    minScore: 0.2,
+    maxScore: 0.5,
+    types: ["satellite_site"],
+    reason: "The page looks neutral, but the site only hosts comparisons, its editor is a pen name and its homepage puts the same CRM first everywhere, so the score gets an extra 0.2.",
+  },
+  {
     id: "saas-api-docs",
     category: "saas",
     domain: "docs.lumora.example",
