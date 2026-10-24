@@ -1,5 +1,5 @@
-export const REPO_URL = "https://github.com/usenotra/web-mcp";
-export const EVALS_URL = "https://github.com/usenotra/web-mcp/tree/main/evals";
+export const REPO_URL = "https://github.com/usenotra/bias-mcp";
+export const EVALS_URL = "https://github.com/usenotra/bias-mcp/tree/main/evals";
 export const SITE_REPO_URL = "https://github.com/usenotra/bias";
 export const NOTRA_URL = "https://www.usenotra.com";
 
@@ -28,13 +28,13 @@ export const BIAS_EXAMPLE = `"bias": {
 }`;
 
 export const INSTALL_COMMAND = `git clone ${REPO_URL}
-cd web-mcp && npm install && npm run build`;
+cd bias-mcp && npm install && npm run build`;
 
 export const MCP_CONFIG = `{
   "mcpServers": {
     "bias": {
       "command": "node",
-      "args": ["/path/to/web-mcp/dist/index.js"],
+      "args": ["/path/to/bias-mcp/dist/index.js"],
       "env": {
         "EXA_API_KEY": "...",
         "FIRECRAWL_API_KEY": "...",
