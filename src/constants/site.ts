@@ -62,3 +62,9 @@ export const CASES = [
     body: "A news site funded by a political party gets a high score when it covers that party's opponents, and the reason names the funder and links to where the research found it.",
   },
 ];
+
+export const PROVIDERS = [
+  { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", className: "h-5.5" },
+  { name: "Firecrawl", url: "https://www.firecrawl.dev", logo: "/logos/firecrawl.svg", className: "h-6" },
+  { name: "context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", className: "h-8" },
+];

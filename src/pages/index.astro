@@ -11,6 +11,7 @@ import {
   INSTALL_COMMAND,
   MCP_CONFIG,
   NOTRA_URL,
+  PROVIDERS,
   REPO_URL,
   SITE_DESCRIPTION,
   SITE_REPO_URL,
@@ -46,6 +47,20 @@ import {
         independent review.
       </p>
       <HeroActions />
+      <div class="mt-14">
+        <p class="text-muted-foreground text-sm">Works with your keys for</p>
+        <ul class="mt-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+          {
+            PROVIDERS.map((provider) => (
+              <li>
+                <a href={provider.url} class="block opacity-80 transition-opacity hover:opacity-100" aria-label={provider.name}>
+                  <img src={provider.logo} alt={provider.name} class={`${provider.className} w-auto`} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </section>
 
     <section class="mx-auto max-w-4xl px-6 pb-24">
@@ -129,7 +144,7 @@ import {
           still answer and the failure shows up in the response.
         </p>
         <p class="text-muted-foreground mt-4 text-pretty">
-          <code class="text-foreground">web_fetch</code> tries Firecrawl first, then context.dev, then Exa, and returns
+          <code class="text-foreground">web_fetch</code> tries <a href="https://www.firecrawl.dev" class="text-foreground underline underline-offset-4">Firecrawl</a> first, then <a href="https://www.context.dev" class="text-foreground underline underline-offset-4">context.dev</a>, then <a href="https://exa.ai" class="text-foreground underline underline-offset-4">Exa</a>, and returns
           the first page that comes back as clean markdown. You can also name a single provider.
         </p>
       </div>
