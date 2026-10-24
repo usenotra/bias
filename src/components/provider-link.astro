@@ -10,4 +10,4 @@ interface Props {
 const { name, url, domain } = Astro.props;
 ---
 
-<a href={url} target="_blank" rel="noopener" class="text-foreground ml-1 inline-flex items-baseline gap-1 underline underline-offset-4"><img src={faviconUrl(domain)} alt="" width="16" height="16" class="size-4 self-center rounded-sm" loading="lazy" />{name}</a>
+<a href={url} target="_blank" rel="noopener" class="text-foreground ml-1 inline-flex items-baseline gap-1 underline underline-offset-4"><img src={faviconUrl(domain)} alt="" width="16" height="16" class="size-4 self-center" loading="lazy" />{name}</a>
