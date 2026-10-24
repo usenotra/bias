@@ -28,7 +28,7 @@ export const BIAS_EXAMPLE = `"bias": {
 }`;
 
 export const INSTALL_COMMAND = `git clone ${REPO_URL}
-cd bias-mcp && npm install && npm run build`;
+cd bias-mcp && pnpm install && pnpm build`;
 
 export const MCP_CONFIG = `{
   "mcpServers": {
