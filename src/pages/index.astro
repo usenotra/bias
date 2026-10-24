@@ -72,7 +72,7 @@ import {
     <section class="mx-auto max-w-3xl px-6 pb-24">
       <figure class="bg-muted/60 rounded-2xl border p-6 sm:p-8">
         <blockquote class="text-lg text-pretty">
-          "{QUOTE.before}<ProviderLink name={QUOTE.mention.name} url={QUOTE.mention.url} domain={QUOTE.mention.domain} />{QUOTE.after}"
+          "{QUOTE.parts.map((part) => (part.link ? <ProviderLink name={part.link.name} url={part.link.url} domain={part.link.domain} /> : part.text))}"
         </blockquote>
         <figcaption class="text-muted-foreground mt-5 flex items-center gap-2.5 text-sm">
           <img src={faviconUrl(QUOTE.author.domain)} alt="" width="20" height="20" class="size-5" loading="lazy" />
