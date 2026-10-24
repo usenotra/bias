@@ -91,3 +91,11 @@ export const GATEWAYS = [
     note: "Bias uses Vercel AI Gateway when neither Neon nor OpenRouter is set.",
   },
 ];
+
+export const QUOTE = {
+  before: "A few weeks ago, when I was in SF for SF Tech Week, I was talking to",
+  mention: { name: "Kaylee from Inth", url: "https://inth.com", domain: "inth.com" },
+  after:
+    ", a consent platform, about how weird it is that web fetch tools don't come with a bias score and how I think this needs to be a thing. Kaylee agreed, and we chatted about building something like this.",
+  author: { name: "Dominik", company: "Notra", url: NOTRA_URL, domain: "usenotra.com" },
+};
