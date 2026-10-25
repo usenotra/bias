@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bias.usenotra.com/sitemap-index.xml
+Sitemap: https://bias.usenotra.com/sitemap.xml
