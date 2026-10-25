@@ -96,7 +96,7 @@ export const GATEWAYS = [
 export const QUOTE = {
   parts: [
     { text: "A few weeks ago at SF Tech Week, I was talking to" },
-    { link: { name: "Kaylee", url: "https://www.kaylee.dev", domain: "kaylee.dev" } },
+    { link: { name: "Kaylee", url: "https://www.kaylee.dev", domain: "kaylee.dev", track: false } },
     { text: " from" },
     { link: { name: "Inth", url: "https://inth.com", domain: "inth.com" } },
     {

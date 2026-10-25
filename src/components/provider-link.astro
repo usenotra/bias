@@ -6,9 +6,10 @@ interface Props {
   name: string;
   url: string;
   domain: string;
+  track?: boolean;
 }
 
-const { name, url, domain } = Astro.props;
+const { name, url, domain, track = true } = Astro.props;
 ---
 
-<a href={trackedUrl(url)} target="_blank" rel="noopener" class="text-foreground ml-1 inline-flex items-baseline gap-1 underline underline-offset-4"><img src={faviconUrl(domain)} alt="" width="16" height="16" class="size-4 self-center" loading="lazy" />{name}</a>
+<a href={track ? trackedUrl(url) : url} target="_blank" rel="noopener" class="text-foreground ml-1 inline-flex items-baseline gap-1 underline underline-offset-4"><img src={faviconUrl(domain)} alt="" width="16" height="16" class="size-4 self-center" loading="lazy" />{name}</a>

@@ -62,7 +62,7 @@ import {
     <section class="mx-auto max-w-3xl px-6 pb-24">
       <figure class="bg-muted/60 rounded-2xl border p-6 sm:p-8">
         <blockquote class="text-lg text-pretty">
-          "{QUOTE.parts.map((part) => (part.link ? <ProviderLink name={part.link.name} url={part.link.url} domain={part.link.domain} /> : part.text))}"
+          "{QUOTE.parts.map((part) => (part.link ? <ProviderLink name={part.link.name} url={part.link.url} domain={part.link.domain} track={part.link.track} /> : part.text))}"
         </blockquote>
         <figcaption class="text-muted-foreground mt-6 flex items-center gap-3 text-sm">
           <img src={QUOTE.author.avatar} alt={QUOTE.author.name} width="36" height="36" class="size-9 rounded-full" loading="lazy" />
