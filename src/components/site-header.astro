@@ -43,9 +43,9 @@ import { NAV_LINKS } from "@/constants/site";
     translate: 0 -0.5rem;
     scale: 0.97;
     transition:
-      opacity 180ms ease-out,
-      translate 180ms ease-out,
-      scale 180ms ease-out,
+      opacity 180ms ease-in-out,
+      translate 180ms ease-in-out,
+      scale 180ms ease-in-out,
       display 180ms allow-discrete,
       overlay 180ms allow-discrete;
   }
@@ -67,7 +67,7 @@ import { NAV_LINKS } from "@/constants/site";
   #mobile-nav::backdrop {
     background-color: rgb(0 0 0 / 0);
     transition:
-      background-color 180ms ease-out,
+      background-color 180ms ease-in-out,
       display 180ms allow-discrete,
       overlay 180ms allow-discrete;
   }
