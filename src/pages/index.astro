@@ -4,6 +4,7 @@ import BiasDemo from "@/components/bias-demo";
 import BiasExamples from "@/components/bias-examples";
 import HeroActions from "@/components/hero-actions";
 import ClaudeMention from "@/components/claude-mention.astro";
+import NotraBadge from "@/components/notra-badge.astro";
 import ProviderLink from "@/components/provider-link.astro";
 import Layout from "@/layouts/Layout.astro";
 import {
@@ -26,11 +27,13 @@ import {
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <header class="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
-    <a href="/" class="flex items-center gap-2.5 font-semibold tracking-tight">
-      <img src="/favicon.svg" alt="" class="size-7" />
-      Bias
-      <span class="text-muted-foreground font-normal">by Notra</span>
-    </a>
+    <div class="flex items-center gap-2.5">
+      <a href="/" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <img src="/favicon.svg" alt="" class="size-7" />
+        Bias
+      </a>
+      <NotraBadge />
+    </div>
     <nav class="text-muted-foreground flex items-center gap-6 text-sm">
       <a href="#examples" class="hover:text-foreground">Examples</a>
       <a href="#how" class="hover:text-foreground">How it works</a>

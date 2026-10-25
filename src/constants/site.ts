@@ -2,6 +2,7 @@ export const REPO_URL = "https://github.com/usenotra/bias-mcp";
 export const EVALS_URL = "https://github.com/usenotra/bias-mcp/tree/main/evals";
 export const SITE_REPO_URL = "https://github.com/usenotra/bias";
 export const NOTRA_URL = "https://www.usenotra.com";
+export const NOTRA_LOGO_URL = "https://www.usenotra.com/logo-dark.svg";
 
 export const SITE_TITLE = "Bias, web search that tells your agent who is behind every page";
 export const SITE_DESCRIPTION =
