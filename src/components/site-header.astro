@@ -1,5 +1,6 @@
 ---
 import { Menu } from "lucide-react";
+import GithubIcon from "@/components/github-icon.astro";
 import NotraBadge from "@/components/notra-badge.astro";
 import { NAV_LINKS } from "@/constants/site";
 ---
@@ -13,7 +14,7 @@ import { NAV_LINKS } from "@/constants/site";
     <NotraBadge />
   </div>
   <nav class="text-muted-foreground hidden items-center gap-6 text-sm whitespace-nowrap md:flex">
-    {NAV_LINKS.map((link) => <a href={link.href} class="hover:text-foreground">{link.label}</a>)}
+    {NAV_LINKS.map((link) => <a href={link.href} class="hover:text-foreground inline-flex items-center gap-1.5">{link.icon === "github" && <GithubIcon class="size-4" />}{link.label}</a>)}
   </nav>
   <button
     type="button"
@@ -28,7 +29,7 @@ import { NAV_LINKS } from "@/constants/site";
     popover
     class="bg-background text-foreground inset-x-4 top-20 bottom-auto m-0 h-auto w-auto rounded-2xl border p-2 origin-top-right shadow-lg md:hidden"
   >
-    {NAV_LINKS.map((link) => <a href={link.href} class="hover:bg-muted block rounded-lg px-4 py-3">{link.label}</a>)}
+    {NAV_LINKS.map((link) => <a href={link.href} class="hover:bg-muted flex items-center gap-2 rounded-lg px-4 py-3">{link.icon === "github" && <GithubIcon class="size-4" />}{link.label}</a>)}
   </nav>
 </header>
 

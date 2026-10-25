@@ -110,7 +110,7 @@ export const NAV_LINKS = [
   { label: "Examples", href: "#examples" },
   { label: "How it works", href: "#how" },
   { label: "Install", href: "#install" },
-  { label: "GitHub", href: REPO_URL },
+  { label: "GitHub", href: REPO_URL, icon: "github" },
 ];
 
 export const UTM_PARAMS = {
