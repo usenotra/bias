@@ -64,9 +64,9 @@ export const CASES = [
 ];
 
 export const PROVIDERS = [
-  { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", className: "h-5.5" },
-  { name: "Firecrawl", url: "https://www.firecrawl.dev", logo: "/logos/firecrawl.svg", className: "h-6" },
-  { name: "Context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", className: "h-8" },
+  { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", width: 413, height: 129, className: "h-5.5" },
+  { name: "Firecrawl", url: "https://www.firecrawl.dev", logo: "/logos/firecrawl.svg", width: 172, height: 40, className: "h-6" },
+  { name: "Context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", width: 254, height: 52, className: "h-8" },
 ];
 
 export const GATEWAYS = [

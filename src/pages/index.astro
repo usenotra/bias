@@ -45,7 +45,7 @@ import {
             PROVIDERS.map((provider) => (
               <li>
                 <a href={provider.url} target="_blank" rel="noopener" class="block opacity-80 transition-opacity hover:opacity-100" aria-label={provider.name}>
-                  <img src={provider.logo} alt={provider.name} class={`${provider.className} w-auto`} />
+                  <img src={provider.logo} alt={provider.name} width={provider.width} height={provider.height} class={`${provider.className} w-auto`} />
                 </a>
               </li>
             ))
