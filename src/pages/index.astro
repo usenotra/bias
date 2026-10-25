@@ -3,6 +3,7 @@ import { Code } from "astro:components";
 import BiasDemo from "@/components/bias-demo";
 import BiasExamples from "@/components/bias-examples";
 import HeroActions from "@/components/hero-actions";
+import ClaudeMention from "@/components/claude-mention.astro";
 import ProviderLink from "@/components/provider-link.astro";
 import Layout from "@/layouts/Layout.astro";
 import {
@@ -133,7 +134,7 @@ import {
         <div>
           <h2 class="text-3xl font-semibold tracking-[-0.02em]">How the score is made</h2>
           <p class="text-muted-foreground mt-4 text-pretty">
-            Claude Haiku 5.5 reads each page and writes the score, and the server checks the sources it cites before
+            <ClaudeMention /> reads each page and writes the score, and the server checks the sources it cites before
             the result reaches your agent. Scoring a 30,000 token article costs about $0.003.
           </p>
         </div>
@@ -184,7 +185,7 @@ import {
       <p class="text-muted-foreground mt-3 text-pretty">
         Scoring runs through the <a href="https://ai-sdk.dev" target="_blank" rel="noopener" class="text-foreground underline underline-offset-4">AI SDK</a>.
         Bias checks for these keys in order and uses the first gateway that is fully set. Every gateway defaults to
-        Claude Haiku 5.5, and <code class="text-foreground">BIAS_MODEL</code> switches to another model.
+        <ClaudeMention />, and <code class="text-foreground">BIAS_MODEL</code> switches to another model.
       </p>
       <ol class="mt-6 space-y-3">
         {
