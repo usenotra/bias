@@ -3,7 +3,7 @@ import { NOTRA_LOGO_URL, NOTRA_URL } from "@/constants/site";
 
 const response = await fetch(NOTRA_LOGO_URL);
 if (!response.ok) throw new Error(`Could not load the Notra logo from ${NOTRA_LOGO_URL}: ${response.status}`);
-const logo = (await response.text()).replace(/\s(width|height)="[^"]*"/g, "").replace("<svg", '<svg class="size-4" aria-hidden="true"');
+const logo = (await response.text()).replace(/\s(width|height)="[^"]*"/g, "").replace("<svg", '<svg class="size-6" aria-hidden="true"');
 ---
 
 <a href={NOTRA_URL} target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors">
