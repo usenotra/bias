@@ -38,3 +38,12 @@ export const DEMO_ANSWER =
   "I left Lumora's ranking out of the comparison because Lumora wrote it and puts itself first (bias **0.92**). I used their API docs only for facts about what the contacts API supports.";
 
 export const DEMO_SUMMARY = { doneAt: "10:12 AM", duration: "21s", verb: "Weighed" };
+
+export const DEMO_TIMING = {
+  typeMs: 32,
+  submitMs: 500,
+  toolRunMs: 1100,
+  betweenToolsMs: 300,
+  beforeAnswerMs: 400,
+  wordMs: 55,
+};
