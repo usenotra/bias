@@ -87,8 +87,7 @@ function Reveal({ show, children }: { show: boolean; children: ReactNode }) {
   return (
     <motion.div
       animate={{ opacity: show ? 1 : 0, y: show ? 0 : 4 }}
-      aria-hidden={!show}
-      className={show ? undefined : "pointer-events-none"}
+      inert={!show}
       initial={false}
       transition={{ duration: 0.18, ease: "easeOut" }}
     >

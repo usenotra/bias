@@ -164,7 +164,7 @@ function IconTabsTrigger({
   return (
     <TabsPrimitive.Tab
       className={cn(
-        "group/tab text-muted-foreground/75 hover:text-muted-foreground data-active:text-foreground focus-visible:outline-ring relative z-1 inline-flex h-full flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md px-2.5 text-sm font-medium whitespace-nowrap outline-2 outline-transparent transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "group/tab text-foreground/65 hover:text-foreground/85 data-active:text-foreground focus-visible:outline-ring relative z-1 inline-flex h-full flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md px-2.5 text-sm font-medium whitespace-nowrap outline-2 outline-transparent transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className
       )}
       data-slot="icon-tabs-trigger"
