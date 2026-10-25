@@ -61,6 +61,7 @@
     --color-claude-code-fg: var(--claude-code-fg);
     --color-claude-code-strong: var(--claude-code-strong);
     --color-claude-code-accent: var(--claude-code-accent);
+    --color-claude-code-accent-text: var(--claude-code-accent-text);
     --color-claude-code-muted: var(--claude-code-muted);
     --color-claude-code-rule: var(--claude-code-rule);
     --color-claude-code-link: var(--claude-code-link);
@@ -161,6 +162,7 @@
     --claude-code-fg: #1f1f1f;
     --claude-code-strong: #000000;
     --claude-code-accent: #d77757;
+    --claude-code-accent-text: #b5532d;
     --claude-code-muted: #666666;
     --claude-code-rule: #999999;
     --claude-code-link: #5769f7;
@@ -216,6 +218,7 @@
     --claude-code-fg: #f7f7f7;
     --claude-code-strong: #ffffff;
     --claude-code-accent: #e06443;
+    --claude-code-accent-text: #e06443;
     --claude-code-muted: #8c8c8c;
     --claude-code-rule: #7b7b7b;
     --claude-code-link: #a4b0fc;

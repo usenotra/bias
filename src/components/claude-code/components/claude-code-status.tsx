@@ -73,7 +73,7 @@ export const ClaudeCodeSpinner = ({
           {glyph}
         </span>
         <span className="min-w-0">
-          <span className="text-claude-code-accent">{verb}…</span>
+          <span className="text-claude-code-accent-text">{verb}…</span>
           {meta.length > 0 && <> ({meta.join(" · ")})</>}
         </span>
       </p>
