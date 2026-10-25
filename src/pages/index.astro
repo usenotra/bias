@@ -4,8 +4,8 @@ import BiasDemo from "@/components/bias-demo";
 import BiasExamples from "@/components/bias-examples";
 import HeroActions from "@/components/hero-actions";
 import ClaudeMention from "@/components/claude-mention.astro";
-import NotraBadge from "@/components/notra-badge.astro";
 import ProviderLink from "@/components/provider-link.astro";
+import SiteHeader from "@/components/site-header.astro";
 import Layout from "@/layouts/Layout.astro";
 import {
   BIAS_EXAMPLE,
@@ -26,21 +26,7 @@ import {
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <header class="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
-    <div class="flex items-center gap-2.5">
-      <a href="/" class="flex items-center gap-2.5 font-semibold tracking-tight">
-        <img src="/favicon.svg" alt="" class="size-7" />
-        Bias
-      </a>
-      <NotraBadge />
-    </div>
-    <nav class="text-muted-foreground flex items-center gap-6 text-sm">
-      <a href="#examples" class="hover:text-foreground">Examples</a>
-      <a href="#how" class="hover:text-foreground">How it works</a>
-      <a href="#install" class="hover:text-foreground">Install</a>
-      <a href={REPO_URL} class="hover:text-foreground">GitHub</a>
-    </nav>
-  </header>
+  <SiteHeader />
 
   <main>
     <section class="mx-auto max-w-3xl px-6 pt-16 pb-14 text-center sm:pt-24">
@@ -212,9 +198,9 @@ import {
   </main>
 
   <footer class="border-t">
-    <div class="text-muted-foreground mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm">
+    <div class="text-muted-foreground mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 py-8 text-sm md:flex-row md:items-center md:gap-8">
       <p>Bias is MIT licensed and built by <a href={NOTRA_URL} class="text-foreground hover:underline">Notra</a>. Every company, outlet, party and person on this page is fictional.</p>
-      <div class="flex gap-6">
+      <div class="flex shrink-0 gap-6">
         <a href={REPO_URL} class="hover:text-foreground">Server source</a>
         <a href={SITE_REPO_URL} class="hover:text-foreground">Site source</a>
       </div>

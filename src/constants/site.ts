@@ -105,3 +105,10 @@ export const QUOTE = {
   ],
   author: { name: "Dominik Koch", role: "CEO", company: "@Notra", url: NOTRA_URL, avatar: "/dominik.jpg" },
 };
+
+export const NAV_LINKS = [
+  { label: "Examples", href: "#examples" },
+  { label: "How it works", href: "#how" },
+  { label: "Install", href: "#install" },
+  { label: "GitHub", href: REPO_URL },
+];
