@@ -112,3 +112,9 @@ export const NAV_LINKS = [
   { label: "Install", href: "#install" },
   { label: "GitHub", href: REPO_URL },
 ];
+
+export const UTM_PARAMS = {
+  utm_source: "bias.usenotra.com",
+  utm_medium: "referral",
+  utm_campaign: "bias",
+};

@@ -1,12 +1,13 @@
 ---
 import { NOTRA_LOGO_URL, NOTRA_URL } from "@/constants/site";
+import { trackedUrl } from "@/utils/url";
 
 const response = await fetch(NOTRA_LOGO_URL);
 if (!response.ok) throw new Error(`Could not load the Notra logo from ${NOTRA_LOGO_URL}: ${response.status}`);
 const logo = (await response.text()).replace(/\s(width|height)="[^"]*"/g, "").replace("<svg", '<svg class="size-4" aria-hidden="true"');
 ---
 
-<a href={NOTRA_URL} target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors">
+<a href={trackedUrl(NOTRA_URL)} target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors">
   <span>by</span>
   <span class="flex items-center gap-1 font-medium"><Fragment set:html={logo} />Notra</span>
 </a>
