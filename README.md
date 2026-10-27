@@ -1,6 +1,6 @@
 # bias.usenotra.com
 
-This repository holds the landing page for Bias, the MCP server that runs web search and fetch through Exa, Firecrawl and Context.dev and scores every fetched page for bias. The site is built with Astro and the [Notra UI](https://ui.usenotra.com) components, and it runs on Cloudflare Workers at [bias.usenotra.com](https://bias.usenotra.com).
+This repository holds the landing page for Bias, the MCP server that runs web search and fetch through Context.dev, Firecrawl and Exa and scores every fetched page for bias. The site is built with Astro and the [Notra UI](https://ui.usenotra.com) components, and it runs on Cloudflare Workers at [bias.usenotra.com](https://bias.usenotra.com).
 
 ## Develop
 

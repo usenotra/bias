@@ -6,7 +6,7 @@ export const NOTRA_LOGO_URL = "https://www.usenotra.com/logo.svg";
 
 export const SITE_TITLE = "Bias, web search that tells your agent who is behind every page";
 export const SITE_DESCRIPTION =
-  "An MCP server for web search and fetch on top of Exa, Firecrawl and Context.dev that scores every page it reads for commercial and political bias.";
+  "An MCP server for web search and fetch on top of Context.dev, Firecrawl and Exa that scores every page it reads for commercial and political bias.";
 
 export const BIAS_EXAMPLE = `"bias": {
   "applicable": true,
@@ -37,7 +37,7 @@ export const MCP_CONFIG = `{
       "command": "node",
       "args": ["/path/to/bias-mcp/dist/index.js"],
       "env": {
-        "FIRECRAWL_API_KEY": "...",
+        "CONTEXT_DEV_API_KEY": "...",
         "NEON_AI_GATEWAY_BASE_URL": "...",
         "NEON_AI_GATEWAY_TOKEN": "..."
       }
@@ -64,9 +64,9 @@ export const CASES = [
 ];
 
 export const PROVIDERS = [
-  { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", width: 413, height: 129, className: "h-5.5" },
+  { name: "Context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", width: 822, height: 144, className: "h-7" },
   { name: "Firecrawl", url: "https://www.firecrawl.dev", logo: "/logos/firecrawl.svg", width: 172, height: 40, className: "h-6" },
-  { name: "Context.dev", url: "https://www.context.dev", logo: "/logos/context.svg", width: 254, height: 52, className: "h-8" },
+  { name: "Exa", url: "https://exa.ai", logo: "/logos/exa.svg", width: 413, height: 129, className: "h-5.5" },
 ];
 
 export const GATEWAYS = [
