@@ -147,11 +147,10 @@ import {
       <div class="mx-auto max-w-3xl px-6 py-24">
         <h2 class="text-3xl font-semibold tracking-[-0.02em]">One interface over three providers</h2>
         <p class="text-muted-foreground mt-4 text-pretty">
-          Bias uses one provider at a time, picked from the keys you have set. It tries
-          <ProviderLink name="Context.dev" url="https://www.context.dev" domain="context.dev" /> first, then
-          <ProviderLink name="Firecrawl" url="https://www.firecrawl.dev" domain="firecrawl.dev" />, then
-          <ProviderLink name="Exa" url="https://exa.ai" domain="exa.ai" />, and only moves to the next one when a call
-          fails, so a single key is all you need.
+          Bias works with <ProviderLink name="Context.dev" url="https://www.context.dev" domain="context.dev" />,{" "}
+          <ProviderLink name="Firecrawl" url="https://www.firecrawl.dev" domain="firecrawl.dev" /> and{" "}
+          <ProviderLink name="Exa" url="https://exa.ai" domain="exa.ai" />, and a single key from any of them is all you
+          need.
         </p>
         <p class="text-muted-foreground mt-4 text-pretty">
           Both tools return the page as markdown in the same result shape, whichever provider answered. You can name a
