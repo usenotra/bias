@@ -48,6 +48,7 @@ export const MCP_CONFIG = `{
 export const STEPS = [
   "The server searches for the publisher's owner, parent company, funding and political ties. It keeps the result for that domain, so the next page from the same site skips the search.",
   "Claude Haiku 5.5 reads the page, the research results and the reader's intent if you pass one. It runs through the AI SDK and returns a score, a reason and a list of sources as structured JSON.",
+  "The server also reads the rel of every outbound link: dofollow, nofollow, ugc or sponsored. A page where some vendor links are dofollow and comparable ones are nofollow is very likely selling those links. With a Vercel AI Gateway key, Jev, TypeSafe AI's evaluation model, judges the links too and marks the page sponsored when it is sure enough.",
   "The server removes any source URL that was not in the material the model received, so every source in the answer points to material the model read.",
   "Documentation, specs and changelogs come back with applicable set to false and a null score, because a reference page has no conclusion to push.",
 ];
@@ -89,7 +90,7 @@ export const GATEWAYS = [
     url: "https://vercel.com/ai-gateway",
     domain: "vercel.com",
     env: ["AI_GATEWAY_API_KEY"],
-    note: "Bias uses Vercel AI Gateway when neither Neon nor OpenRouter is set.",
+    note: "Bias uses Vercel AI Gateway when neither Neon nor OpenRouter is set. This key also turns on the Jev paid-link check, whichever gateway does the scoring.",
   },
 ];
 
